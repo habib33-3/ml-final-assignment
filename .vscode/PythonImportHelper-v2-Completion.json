@@ -154,73 +154,64 @@
     {
         "label": "predict_sales",
         "kind": 2,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "def predict_sales(platform, genre, publisher, year):\n    df = pd.DataFrame({\n        \"Platform\": [platform],\n        \"Genre\": [genre],\n        \"Publisher\": [publisher],\n        \"Year\": [year]\n    })\n    prediction = model.predict(df)[0]\n    return round(float(prediction), 3)\nplatforms = ['Wii', 'NES', 'GB', 'DS', 'X360', 'PS3', 'PS2', 'SNES', 'GBA', '3DS', 'PS4', 'N64',",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "model_path",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "model_path = \"models/model.pkl\"\nwith open(model_path, \"rb\") as f:\n    model = pickle.load(f)\ndef predict_sales(platform, genre, publisher, year):\n    df = pd.DataFrame({\n        \"Platform\": [platform],\n        \"Genre\": [genre],\n        \"Publisher\": [publisher],\n        \"Year\": [year]\n    })",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "platforms",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "platforms = ['Wii', 'NES', 'GB', 'DS', 'X360', 'PS3', 'PS2', 'SNES', 'GBA', '3DS', 'PS4', 'N64',\n             'PS', 'XB', 'PC', '2600', 'PSP', 'XOne', 'GC', 'WiiU', 'GEN', 'DC', 'PSV', 'SAT',\n             'SCD', 'WS', 'NG', 'TG16', '3DO', 'GG', 'PCFX']\ngenres = ['Sports', 'Platform', 'Racing', 'Role-Playing', 'Puzzle', 'Misc', 'Shooter',\n          'Simulation', 'Action', 'Fighting', 'Adventure', 'Strategy']\npublishers = [\n    'Nintendo', 'Microsoft Game Studios', 'Take-Two Interactive',\n    'Sony Computer Entertainment', 'Activision', 'Ubisoft', 'Bethesda Softworks',\n    'Electronic Arts', 'Sega', 'SquareSoft', 'Atari', '505 Games', 'Capcom',\n    'GT Interactive', 'Konami Digital Entertainment', 'Sony Computer Entertainment Europe',",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "genres",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "genres = ['Sports', 'Platform', 'Racing', 'Role-Playing', 'Puzzle', 'Misc', 'Shooter',\n          'Simulation', 'Action', 'Fighting', 'Adventure', 'Strategy']\npublishers = [\n    'Nintendo', 'Microsoft Game Studios', 'Take-Two Interactive',\n    'Sony Computer Entertainment', 'Activision', 'Ubisoft', 'Bethesda Softworks',\n    'Electronic Arts', 'Sega', 'SquareSoft', 'Atari', '505 Games', 'Capcom',\n    'GT Interactive', 'Konami Digital Entertainment', 'Sony Computer Entertainment Europe',\n    'Square Enix', 'LucasArts', 'Virgin Interactive', 'Warner Bros. Interactive Entertainment',\n    'Universal Interactive', 'Eidos Interactive', 'RedOctane', 'Vivendi Games',\n    'Enix Corporation', 'Namco Bandai Games', 'Palcom', 'Hasbro Interactive',",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "publishers",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "publishers = [\n    'Nintendo', 'Microsoft Game Studios', 'Take-Two Interactive',\n    'Sony Computer Entertainment', 'Activision', 'Ubisoft', 'Bethesda Softworks',\n    'Electronic Arts', 'Sega', 'SquareSoft', 'Atari', '505 Games', 'Capcom',\n    'GT Interactive', 'Konami Digital Entertainment', 'Sony Computer Entertainment Europe',\n    'Square Enix', 'LucasArts', 'Virgin Interactive', 'Warner Bros. Interactive Entertainment',\n    'Universal Interactive', 'Eidos Interactive', 'RedOctane', 'Vivendi Games',\n    'Enix Corporation', 'Namco Bandai Games', 'Palcom', 'Hasbro Interactive',\n    'THQ', 'Fox Interactive', 'Acclaim Entertainment', 'MTV Games', 'Disney Interactive Studios',\n    'Majesco Entertainment', 'Codemasters', 'Red Orb', 'Level 5', 'Arena Entertainment',",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "inputs",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "inputs = [\n    gr.Dropdown(choices=platforms, label=\"Platform\"),\n    gr.Dropdown(choices=genres, label=\"Genre\"),\n    gr.Dropdown(choices=publishers, label=\"Publisher\"),\n    gr.Number(label=\"Year\", precision=0, value=2010,\n              minimum=1980, maximum=2025)\n]\napp = gr.Interface(\n    fn=predict_sales,\n    inputs=inputs,",
-        "detail": "src.app",
+        "detail": "app",
         "documentation": {}
     },
     {
         "label": "app",
         "kind": 5,
-        "importPath": "src.app",
-        "description": "src.app",
+        "importPath": "app",
+        "description": "app",
         "peekOfCode": "app = gr.Interface(\n    fn=predict_sales,\n    inputs=inputs,\n    outputs=gr.Number(label=\"Predicted Global Sales, In Millions\"),\n    title=\"Video Game Sales Predictor\"\n)\napp.launch(\n    share=True\n)",
-        "detail": "src.app",
-        "documentation": {}
-    },
-    {
-        "label": "main",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def main():\n    print(\"Hello from ml-final-assignment!\")\nif __name__ == \"__main__\":\n    main()",
-        "detail": "main",
+        "detail": "app",
         "documentation": {}
     }
 ]
